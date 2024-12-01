@@ -1,27 +1,42 @@
 import Link from "next/link";
-import { Button } from "./ui/button";
 import { motion } from "framer-motion";
-import { FaGithub } from "react-icons/fa6";
 import { containerVariants, itemVariants } from "@/lib/animation-variants";
 
 export default function Header() {
   return (
-    <motion.div
+    <motion.nav
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="fixed right-0 top-0 z-[50] m-4">
-      <motion.div variants={itemVariants}>
-        <Link href="https://github.com/lakshaybhushan/nextjs-notion-waitlist-template/fork">
-          <Button
-            size="sm"
-            variant="secondary"
-            className="text-yellow-50 transition-all duration-150 ease-linear md:hover:text-yellow-200">
-            <FaGithub className="md:mr-1.5" />
-            <span className="hidden md:inline">Use this template</span>
-          </Button>
+      className="fixed left-0 top-0 z-50 flex w-full items-center justify-between bg-black/70 px-6 py-4 text-white shadow-lg backdrop-blur-lg">
+      {/* Left Section: Name and SVG */}
+      <motion.div
+        variants={itemVariants}
+        className="flex items-center space-x-2">
+        {/* Replace with your SVG */}
+
+        <motion.img
+          src="/floe.svg"
+          alt="logo"
+          className="mx-auto h-8 w-8"
+          variants={itemVariants}
+          style={{ filter: "invert(1)" }}
+        />
+        <Link href="/" className="text-lg font-bold">
+          Floe
         </Link>
       </motion.div>
-    </motion.div>
+
+      {/* Center Section: How? Link */}
+      <motion.div
+        variants={itemVariants}
+        className="absolute inset-x-0 text-center">
+        <Link
+          href="#how"
+          className="text-lg font-bold text-white transition-all duration-150 hover:text-yellow-200">
+          How?
+        </Link>
+      </motion.div>
+    </motion.nav>
   );
 }

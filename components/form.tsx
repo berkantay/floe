@@ -47,15 +47,19 @@ export default function Form({
         />
       </motion.div>
       <motion.div variants={itemVariants}>
-        <EnhancedButton
-          variant="expandIcon"
-          Icon={FaArrowRightLong}
-          onClick={handleSubmit}
-          iconPlacement="right"
-          className="mt-2 w-full"
-          disabled={loading}>
-          {loading ? "Loading..." : "Join Waitlist!"}
-        </EnhancedButton>
+        <motion.div
+          className="mt-2 flex justify-center"
+          variants={itemVariants}>
+          <button
+            className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+            onClick={handleSubmit}
+            disabled={loading}>
+            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FFA500_0%,#800080_50%,#FFA500_100%)]" />
+            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+              Join the waitlist!
+            </span>
+          </button>
+        </motion.div>
       </motion.div>
       <motion.div
         variants={itemVariants}

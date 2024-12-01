@@ -10,27 +10,28 @@ export default function CTA() {
       variants={containerVariants}
       initial="hidden"
       animate="visible">
-      <motion.div variants={itemVariants}>
-        <div className="flex items-center justify-center">
-          <div className="flex w-fit items-center justify-center rounded-full bg-muted/80 text-center">
-            <AnimatedShinyText className="px-4 py-1">
-              <span>Coming soon!</span>
-            </AnimatedShinyText>
-          </div>
-        </div>
-      </motion.div>
+      <motion.div variants={itemVariants}></motion.div>
 
       <motion.img
-        src="/logo.svg"
+        src="/floe.svg"
         alt="logo"
         className="mx-auto h-24 w-24"
         variants={itemVariants}
+        style={{ filter: "invert(1)" }}
       />
+
+      <div className="flex items-center justify-center">
+        <div className="flex w-fit items-center justify-center rounded-full bg-muted/80 text-center">
+          <AnimatedShinyText className="px-4 py-1">
+            <span>Coming soon!</span>
+          </AnimatedShinyText>
+        </div>
+      </div>
 
       <motion.div variants={itemVariants}>
         <TextBlur
           className="text-center text-3xl font-medium tracking-tighter sm:text-5xl"
-          text="A Simple Next.js Waitlist Template with Notion as CMS"
+          text="Personal assistant in your pocket."
         />
       </motion.div>
 

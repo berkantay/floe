@@ -80,3 +80,19 @@ body {
     @apply bg-accent text-yellow-200;
   }
 }
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+  transform-origin: 50% 50%; /* Animation origin at center */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  } /* Expand by 5% */
+  100% {
+    transform: scale(1);
+  }
+}
